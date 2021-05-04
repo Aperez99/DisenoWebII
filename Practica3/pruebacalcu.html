@@ -19,41 +19,37 @@
                     <p>+</p>
                     <input id="numero2" type="text">
                     <p>=</p>
-                    <input class="resultadoparimpar" id="resultado" type="text" readonly>
-                    <input  type="button" class="btn" onclick="parimpar()" value="Resultado">
+                    <input class="resultadoparimpar" id="resultado1" type="text" readonly>
+                    <input type="button" class="btn" onclick="parimpar()" value="Resultado">
                 </form>
             </div>
 
             <div class="abc">
                 <form action="">
-                    <input id="numero1" type="text">
-                    <p>+</p>
-                    <input id="numero2" type="text">
-                    <p>=</p>
-                    <input id="resultado" type="text" readonly>
-                    <input type="button" class="btn" onclick="mayor()" value="Resultado">
+                    <input id="numeroabc1" type="text">
+                    <input id="numeroabc2" type="text">
+                    <input id="numeroabc3" type="text">
+                    <p class="pp">el numero del medio es:</p>
+                    <input id="resultado2" type="text" readonly>
+                    <input type="button" class="btn" onclick="abc()" value="Resultado">
                 </form>
             </div>
 
             <div class="factorial">
                 <form action="">
-                    <input id="numero1" type="text">
-                    <p>+</p>
-                    <input id="numero2" type="text">
-                    <p>=</p>
-                    <input id="resultado" type="text" readonly>
-                    <input type="button" class="btn" onclick="mayor()" value="Resultado">
+                    <input id="numerofac1" type="text">
+                    <p>el factorial del numero es:</p>
+                    <input id="resultado3" type="text" readonly>
+                    <input type="button" class="btn" onclick="factorial()" value="Resultado">
                 </form>
             </div>
 
             <div class="primos">
                 <form action="">
-                    <input id="numero1" type="text">
-                    <p>+</p>
-                    <input id="numero2" type="text">
-                    <p>=</p>
-                    <input id="resultado" type="text" readonly>
-                    <input type="button" class="btn" onclick="mayor()" value="Resultado">
+                    <input id="numeroprim1" type="text">
+                    <p>los numeros primos son:</p>
+                    <input id="resultado4" type="text" readonly>
+                    <input type="button" class="btn" onclick="primo()" value="Resultado">
                 </form>
             </div>
 
@@ -64,56 +60,91 @@
         function parimpar(numero1, numero2) {
             var num1 = parseFloat(document.getElementById('numero1').value);
             var num2 = parseFloat(document.getElementById('numero2').value);
-            var sum1= num1+num2;
-                if (sum1 % 2 == 0) {
-                    return "Par";
-                }
-                else {
-                    return "Impar";
-                }
-                
-            document.getElementById('resultado').value = "El"+num1+"y el "+num2+"sumados hacen un numero"+
-            sum1;
+            var P = ("EL RESULTADO ES PAR");
+            var I = ("EL RESULTADO ES  IMPAR");
+            var res1 = num1 + num2;
+            if (res1 % 2 === 0) {
+                document.getElementById('resultado1').value = P;
+            } else {
+                document.getElementById('resultado1').value = I;
+            }
+        }
+
+    </script>
+
+    <script>
+        function abc(numero1,numero2,numero3)
+        {
+            var A = parseFloat(document.getElementById('numeroabc1').value);    
+            var B = parseFloat(document.getElementById('numeroabc2').value);
+            var C = parseFloat(document.getElementById('numeroabc3').value);
+            var x = (B);
+            var error = ("ERROR NUMEROS IGUALES");
+            if ((A==B)||(A==C)||(B==C)) 
+            {
+                document.getElementById("resultado2").value = error;
+            }
+            else
+            {
+                var vector=[A,B,C]
+                function comparar ( a, b ){ return a - b; }
+                vector.sort(comparar);
+            }
+            document.getElementById("resultado2").value = vector[1];
         }
     </script>
 
     <script>
-        function potencia(numero1, numero2) {
-            var num1 = parseFloat(document.getElementById('numero1').value);
-            var num2 = parseFloat(document.getElementById('numero2').value);
-            var res1 = 1
-            for (var i = 0; i < num2; i++) {
-                res1 = res1 * num1;
-
-            }
-            document.getElementById('resultado').value = res1;
+        function factorial(numero1)
+        {
+            var A = parseFloat(document.getElementById('numerofac1').value);    
+           
+            var x = 1;
+         
+            for (var i=1; i <= A ; i++)
+            {
+                x=x*i;
+            };
+            document.getElementById('resultado3').value = x;
         }
     </script>
 
     <script>
-        function potencia(numero1, numero2) {
-            var num1 = parseFloat(document.getElementById('numero1').value);
-            var num2 = parseFloat(document.getElementById('numero2').value);
-            var res1 = 1
-            for (var i = 0; i < num2; i++) {
-                res1 = res1 * num1;
-
+           function primo(numero1)
+        {
+            var numero = parseFloat(document.getElementById('numeroprim1').value);
+            var x=0;
+            Array(prim)
+            for (var i = 1; i < numero; i++) 
+            {
+                var y=0;
+                if (i>=2)
+                {
+                    for(var j = 1; j <= i; j++)
+                    {
+                        if( i % j == 0 )
+                        {
+                            y++;
+                        }
+                        else
+                        {
+                            j=i+1;
+                        }
+                        if ((y==2)&&(j==i))
+                        {
+                            prim[x]=i;
+                            x++;
+                        }                   
+                    }
+                } 
+                document.getElementById('resultado4').value = prim; 
             }
-            document.getElementById('resultado').value = res1;
         }
     </script>
-
+    
     <script>
-        function potencia(numero1, numero2) {
-            var num1 = parseFloat(document.getElementById('numero1').value);
-            var num2 = parseFloat(document.getElementById('numero2').value);
-            var res1 = 1
-            for (var i = 0; i < num2; i++) {
-                res1 = res1 * num1;
-
-            }
-            document.getElementById('resultado').value = res1;
-        }
+        
     </script>
 </body>
+
 </html>
