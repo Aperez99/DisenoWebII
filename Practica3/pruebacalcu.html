@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="diseño/diseño.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class=»contenedor-tabla»>
+        <div class=»contenedor-fila»>
+
+            <div class="parimpar">
+                <form action="">
+                    <input id="numero1" type="text">
+                    <p>+</p>
+                    <input id="numero2" type="text">
+                    <p>=</p>
+                    <input class="resultadoparimpar" id="resultado" type="text" readonly>
+                    <input  type="button" class="btn" onclick="parimpar()" value="Resultado">
+                </form>
+            </div>
+
+            <div class="abc">
+                <form action="">
+                    <input id="numero1" type="text">
+                    <p>+</p>
+                    <input id="numero2" type="text">
+                    <p>=</p>
+                    <input id="resultado" type="text" readonly>
+                    <input type="button" class="btn" onclick="mayor()" value="Resultado">
+                </form>
+            </div>
+
+            <div class="factorial">
+                <form action="">
+                    <input id="numero1" type="text">
+                    <p>+</p>
+                    <input id="numero2" type="text">
+                    <p>=</p>
+                    <input id="resultado" type="text" readonly>
+                    <input type="button" class="btn" onclick="mayor()" value="Resultado">
+                </form>
+            </div>
+
+            <div class="primos">
+                <form action="">
+                    <input id="numero1" type="text">
+                    <p>+</p>
+                    <input id="numero2" type="text">
+                    <p>=</p>
+                    <input id="resultado" type="text" readonly>
+                    <input type="button" class="btn" onclick="mayor()" value="Resultado">
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function parimpar(numero1, numero2) {
+            var num1 = parseFloat(document.getElementById('numero1').value);
+            var num2 = parseFloat(document.getElementById('numero2').value);
+            var sum1= num1+num2;
+                if (sum1 % 2 == 0) {
+                    return "Par";
+                }
+                else {
+                    return "Impar";
+                }
+                
+            document.getElementById('resultado').value = "El"+num1+"y el "+num2+"sumados hacen un numero"+
+            sum1;
+        }
+    </script>
+
+    <script>
+        function potencia(numero1, numero2) {
+            var num1 = parseFloat(document.getElementById('numero1').value);
+            var num2 = parseFloat(document.getElementById('numero2').value);
+            var res1 = 1
+            for (var i = 0; i < num2; i++) {
+                res1 = res1 * num1;
+
+            }
+            document.getElementById('resultado').value = res1;
+        }
+    </script>
+
+    <script>
+        function potencia(numero1, numero2) {
+            var num1 = parseFloat(document.getElementById('numero1').value);
+            var num2 = parseFloat(document.getElementById('numero2').value);
+            var res1 = 1
+            for (var i = 0; i < num2; i++) {
+                res1 = res1 * num1;
+
+            }
+            document.getElementById('resultado').value = res1;
+        }
+    </script>
+
+    <script>
+        function potencia(numero1, numero2) {
+            var num1 = parseFloat(document.getElementById('numero1').value);
+            var num2 = parseFloat(document.getElementById('numero2').value);
+            var res1 = 1
+            for (var i = 0; i < num2; i++) {
+                res1 = res1 * num1;
+
+            }
+            document.getElementById('resultado').value = res1;
+        }
+    </script>
+</body>
+
+</html>
